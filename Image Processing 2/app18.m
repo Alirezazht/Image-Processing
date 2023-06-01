@@ -1,0 +1,53 @@
+clc;clear;close all;
+g1 = imread('pillsetc.png');
+% g2=g1(118:221,76:174);
+% g3 = g1(221:280,312:390);
+% g4 = g1(294:358,221:295);
+hsizex= [1  1  1;
+         0   0  0
+         -1  -1 -1];
+hsizey=[-1 0 1;
+        -1 0 1;
+        -1 0 1];
+Ix1=imfilter(g1,hsizex);
+Iy1=imfilter(g1,hsizey);
+% Ix2=imfilter(g3,hsizex);
+% Iy2=imfilter(g3,hsizey);
+% Ix3=imfilter(g4,hsizex);
+% Iy3=imfilter(g4,hsizey);
+It1=abs(Ix1)+abs(Iy1);
+% It2=abs(Ix2)+abs(Iy2);
+% It3=abs(Ix3)+abs(Iy3);
+subplot(2,3,1);imshow(Ix1);
+title('Gx');
+subplot(2,3,4);plot(Ix1(192,:));
+subplot(2,3,2);imshow(Iy1);
+title('Gy');
+subplot(2,3,5);plot(Iy1(192,:));
+subplot(2,3,3);imshow(It1);
+title('Gx+Gy');
+subplot(2,3,6);plot(It1(192,:));
+
+% subplot(3,3,1);plot(Ix1);
+% title('pangare1 Gx');
+% subplot(3,3,2);imshow(Iy1);
+% title('pangare1 Gy');
+% subplot(3,3,3);imshow(It1);
+% title('pangare1 gx+gy');
+% subplot(3,3,4);imshow(Ix2);
+% title('pangare2 Gx');
+% subplot(3,3,5);imshow(Iy2);
+% title('pangare2 Gy');
+% subplot(3,3,6);imshow(It2);
+% title('pangare2 gx+gy');
+% subplot(3,3,7);imshow(Ix3);
+% title('pangare3 Gx');
+% subplot(3,3,8);imshow(Iy3);
+% title('pangare3 Gy');
+% subplot(3,3,9);imshow(It3);
+% title('pangare3 gx+gy');
+% % subplot(2,3,4);plot(Ix(52,:));
+% % subplot(2,3,5);plot(Iy(52,:));
+% % subplot(2,3,6);plot(It(52,:));
+% %    
+% 
